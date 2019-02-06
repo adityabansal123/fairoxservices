@@ -4,7 +4,25 @@ include('header.php');
 include('config/config.php');
 
 if(isset($_POST['submit'])){
-    echo 1;
+    if(isset($_POST['title']) && !empty($_POST['title'])){
+        $title = $_POST['title'];
+    }else{
+        $titleError = '
+            <div class="alert alert-danger" role="alert">
+                    Please enter title field.
+            </div>
+        ';
+    }
+
+    if(isset($_POST['content]) && !empty($_POST['content'])){
+        $content = $_POST['content'];
+    }else{
+        $contentError = '
+            <div class="alert alert-danger" role="alert">
+                    Please enter content field.
+            </div>
+        ';
+    }
 }
 
 ?>
@@ -18,15 +36,22 @@ if(isset($_POST['submit'])){
     			<label for="contenttitle">Title</label>
     			<input type="text" class="form-control" id="contenttitle" name="title" placeholder="Title">
   			</div>
-
-
+            <?php
+                if(isset($titleError)){
+                    echo $titleError;
+                }
+            ?>
   			<div class="form-group">
     			<label>Content</label>
                 
                 <!-- TinyMCE Embed Here by Using ID (mytextarea)-->
     			<textarea id="mytextarea" name="content"></textarea>
   			</div>
-
+            <?php
+                if(isset($contentError)){
+                    echo $contentError;
+                }
+            ?>
   			<button class="btn btn-primary" name="submit" type="submit">Submit</button>
 	
     </form>
