@@ -1,28 +1,30 @@
 <!-- Header File (navebar) included. -->
-<?php include('header.php');
+<?php
+include('header.php');
+include('config/config.php');
 
+if(isset($_POST['submit'])){
+    if(isset($_POST['title']) && !empty($_POST['title'])){
+        $title = $_POST['title'];
+    }else{
+        $titleError = '
+            <div class="alert alert-danger" role="alert">
+                    Please enter title field.
+            </div>
+        ';
+    }
 
-      if(isset($_POST['submit'])){
-        if(isset($_POST['title']) && !empty($_POST['title'])){
-            $title = $_POST['title'];
-        }else{
-            $titleError = '
-                <div class="alert alert-danger" role="alert">
-                            Please enter title field.
-                </div>
-            ';
-        }
+    if(isset($_POST['content]) && !empty($_POST['content'])){
+        $content = $_POST['content'];
+    }else{
+        $contentError = '
+            <div class="alert alert-danger" role="alert">
+                    Please enter content field.
+            </div>
+        ';
+    }
+}
 
-        if(isset($_POST['content]) && !empty($_POST['content'])){
-            $content = $_POST['content'];
-        }else{
-            $contentError = '
-                <div class="alert alert-danger" role="alert">
-                            Please enter content field.
-                </div>
-            ';
-        }
-      }
 ?>
 <div id="container">
 
@@ -34,7 +36,12 @@
     			<label for="contenttitle">Title</label>
     			<input type="text" class="form-control" id="contenttitle" name="title" placeholder="Title">
   			</div>
-  	        <?php if(isset($titleError)) echo $titleError; ?>
+  	        <?php
+  	            if(isset($titleError))
+  	            {
+  	                echo $titleError;
+                }
+            ?>
 
 
   			<div class="form-group">
@@ -43,8 +50,13 @@
                 <!-- TinyMCE Embed Here by Using ID (mytextarea)-->
     			<textarea id="mytextarea" name="content"></textarea>
   			</div>
-  	        <?php if(isset($contentError)) echo $notesError; ?>
 
+  	        <?php
+                if(isset($titleError))
+                {
+                    echo $titleError;
+                }
+            ?>
 
   			<button class="btn btn-primary" name="submit" type="submit">Submit</button>
 	
