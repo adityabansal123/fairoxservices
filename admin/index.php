@@ -14,9 +14,9 @@
         }
 
         if(isset($_POST['content]) && !empty($_POST['content'])){
-            $title = $_POST['content'];
+            $content = $_POST['content'];
         }else{
-            $notesError = '
+            $contentError = '
                 <div class="alert alert-danger" role="alert">
                             Please enter content field.
                 </div>
@@ -43,7 +43,7 @@
                 <!-- TinyMCE Embed Here by Using ID (mytextarea)-->
     			<textarea id="mytextarea" name="content"></textarea>
   			</div>
-  	        <?php if(isset($notesError)) echo $notesError; ?>
+  	        <?php if(isset($contentError)) echo $notesError; ?>
 
 
   			<button class="btn btn-primary" name="submit" type="submit">Submit</button>
