@@ -43,7 +43,7 @@
                 <!-- TinyMCE Embed Here by Using ID (mytextarea)-->
     			<textarea id="mytextarea" name="content"></textarea>
   			</div>
-  	        <?php if(isset($titleError)) echo $notesError; ?>
+  	        <?php if(isset($notesError)) echo $notesError; ?>
 
 
   			<button class="btn btn-primary" name="submit" type="submit">Submit</button>
