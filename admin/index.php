@@ -36,12 +36,6 @@ if(isset($_POST['submit'])){
     			<label for="contenttitle">Title</label>
     			<input type="text" class="form-control" id="contenttitle" name="title" placeholder="Title">
   			</div>
-  	        <?php
-  	            if(isset($titleError))
-  	            {
-  	                echo $titleError;
-                }
-            ?>
 
 
   			<div class="form-group">
@@ -50,13 +44,6 @@ if(isset($_POST['submit'])){
                 <!-- TinyMCE Embed Here by Using ID (mytextarea)-->
     			<textarea id="mytextarea" name="content"></textarea>
   			</div>
-
-  	        <?php
-                if(isset($titleError))
-                {
-                    echo $titleError;
-                }
-            ?>
 
   			<button class="btn btn-primary" name="submit" type="submit">Submit</button>
 	
