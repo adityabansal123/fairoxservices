@@ -1,5 +1,5 @@
 <!-- Header File (navebar) included. -->
-<?php include('header.php'); ?>
+<?php include('header.php');
       include('config/config.php');
 
       if(isset($_POST['submit'])){
@@ -23,7 +23,7 @@
             ';
         }
       }
-  
+?>
 <div id="container">
 
     <h4 class="text-center">Add Content</h4>
