@@ -1,6 +1,6 @@
 <!-- Header File (navebar) included. -->
 <?php include('header.php');
-      include('config/config.php');
+
 
       if(isset($_POST['submit'])){
         if(isset($_POST['title']) && !empty($_POST['title'])){
