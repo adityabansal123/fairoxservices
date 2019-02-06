@@ -1,29 +1,6 @@
 <!-- Header File (navebar) included. -->
 <?php
 include('header.php');
-include('config/config.php');
-
-if(isset($_POST['submit'])){
-    if(isset($_POST['title']) && !empty($_POST['title'])){
-        $title = $_POST['title'];
-    }else{
-        $titleError = '
-            <div class="alert alert-danger" role="alert">
-                    Please enter title field.
-            </div>
-        ';
-    }
-
-    if(isset($_POST['content]) && !empty($_POST['content'])){
-        $content = $_POST['content'];
-    }else{
-        $contentError = '
-            <div class="alert alert-danger" role="alert">
-                    Please enter content field.
-            </div>
-        ';
-    }
-}
 
 ?>
 <div id="container">
