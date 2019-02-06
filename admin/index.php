@@ -1,6 +1,9 @@
 <!-- Header File (navebar) included. -->
 <?php
 include('header.php');
+include('config/config.php');
+
+
 
 ?>
 <div id="container">
