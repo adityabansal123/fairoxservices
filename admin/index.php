@@ -4,7 +4,7 @@ include('header.php');
 include('config/config.php');
 
 if(isset($_POST['submit'])){
-    
+    echo 1;
 }
 
 ?>
