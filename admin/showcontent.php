@@ -1,5 +1,9 @@
 <!-- Header File (navebar) included. -->
-<?php include('header.php'); ?>
+<?php 
+include('header.php');
+include('config/config.php'); 
+
+?>
 
   
 <div id="container">
@@ -42,14 +46,24 @@
         </tr>
 
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Chaudhry Faheem Irfan</td>
-                <td>0000-00-00 00:00:00</td>
-                <td><a href="#" class="btn btn-success"><i class="fas fa-eye"></i> </a></td>
-                <td><a href="#" class="btn btn-primary"><i class="fas fa-edit"></i> </a></td>
-                <td><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i> </a></td>
-            </tr>  
+            <?php
+              $sql = "SELECT * FROM content";
+              $result = mysqli_query($con, $sql);
+              if(mysqli_num_rows($result)>0){
+                while($row = mysqli_fetch_assoc($result)){
+                  echo '<tr>
+                      <td>'.$row["id"].'</td>
+                      <td>'.$row["title"].'</td>
+                      <td>'.$row["addedDate"].'</td>
+                      <td><a href="#" class="btn btn-success"><i class="fas fa-eye"></i> </a></td>
+                      <td><a href="#" class="btn btn-primary"><i class="fas fa-edit"></i> </a></td>
+                      <td><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i> </a></td>
+                  </tr>';
+                }
+              }else{
+                echo '<tr><td>No Record</td></tr>';
+              }
+            ?>
       </tbody>
         
     </table>
