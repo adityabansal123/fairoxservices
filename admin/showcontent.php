@@ -26,8 +26,8 @@ include('config/config.php');
         </form>
       </div>';
     }
-    if(isset($_POST['delID'])){
-      $id = $_POST['delID'];
+    if(isset($_POST['deleteID'])){
+      $id = $_POST['deleteID'];
       $sql = "DELETE FROM content WHERE id=".$id;
       if(mysqli_query($con, $sql)){
         header("Location: showcontent.php");
