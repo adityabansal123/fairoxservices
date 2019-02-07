@@ -12,8 +12,6 @@ if(isset($_GET['updateID'])){
         while($row = mysqli_fetch_assoc($result)){
             $title = $row['title'];
             $content = $row['notes'];
-            print_r($content);
-            exit();
         }
     }else{
         header('Location: showcontent.php');
@@ -56,7 +54,7 @@ if(isset($_POST['submit'])){
 ?>
 <div id="container">
 
-    <h4 class="text-center">Add Content</h4>
+    <h4 class="text-center">Update Content</h4>
     <!-- Form -->
     <form method="post" target="">
   		
@@ -71,7 +69,7 @@ if(isset($_POST['submit'])){
             ?>
   			<div class="form-group">
     			<label>Content</label>
-                <textarea id="mytextarea" name="content" value="<?php if(isset($content)) echo $content; ?>"></textarea>
+                <textarea id="mytextarea" name="content" value="<?php if(isset($content)) echo $content;?>"></textarea>
   			</div>
             <?php
                 if(isset($contentError)){
