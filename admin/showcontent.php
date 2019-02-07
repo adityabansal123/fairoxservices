@@ -67,7 +67,7 @@ include('config/config.php');
                       <td>'.$row["title"].'</td>
                       <td>'.$row["addedDate"].'</td>
                       <td><a href="content.php?id='. $row["id"] .'" class="btn btn-success"><i class="fas fa-eye"></i> </a></td>
-                      <td><a href="upadte.php?updateID='. $row["id"] .'" class="btn btn-primary"><i class="fas fa-edit"></i> </a></td>
+                      <td><a href="update.php?updateID='. $row["id"] .'" class="btn btn-primary"><i class="fas fa-edit"></i> </a></td>
                       <td><a href="showcontent.php?deleteID='. $row["id"] .'" class="btn btn-danger"><i class="fas fa-trash-alt"></i> </a></td>
                   </tr>';
                 }
