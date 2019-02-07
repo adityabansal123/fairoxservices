@@ -11,9 +11,9 @@ if(isset($_POST['submit'])){
     }
 
     if($_POST['content']){
-        echo $_POST['content'];
-        $content = mysql_real_escape_string($_POST['content']);
-        echo $content;
+        echo '1'.$_POST['content'];
+        $content = $_POST['content'];
+        echo '2'.$content;
         exit();
     }else{
         $contentError = '
