@@ -4,6 +4,8 @@ include('header.php');
 include('config/config.php');
 
 if(isset($_POST['submit'])){
+    print_r($_POST);
+    exit();
     if(isset($_POST['title']) && !empty($_POST['title'])){
         $title = $_POST['title'];
     }else{
