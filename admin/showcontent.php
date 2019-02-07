@@ -31,12 +31,12 @@ include('config/config.php');
       $sql = "DELETE FROM content WHERE id=".$id;
       if(mysqli_query($con, $sql)){
         header("Location: showcontent.php");
-        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>Content Deleted sucessfully.</strong>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>';
+        // echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+        //         <strong>Content Deleted sucessfully.</strong>
+        //         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        //           <span aria-hidden="true">&times;</span>
+        //         </button>
+        //       </div>';
       }else{
         echo "Error! Record not deleted".mysqli_error($con);
       }
