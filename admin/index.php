@@ -19,6 +19,19 @@ if(isset($_POST['submit'])){
             </div>
         ';
     }
+
+    if((isset($title) && !empty($title)) && (isset($content) && !empty($content))){
+        $sql = "INSERT INTO content(title, notes) VALUES('$title','$notes')";
+        if(mysqli_query($con, $sql)){
+            header("Location: showcontent.php");
+        }else{
+            $sqlError = '
+                <div class="alert alert-danger" role="alert">
+                        Please try again.
+                </div>
+            '.mysqli_error($con);
+        }
+    }
 }
 ?>
 <div id="container">
