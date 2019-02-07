@@ -12,6 +12,8 @@ if(isset($_GET['updateID'])){
         while($row = mysqli_fetch_assoc($result)){
             $title = $row['title'];
             $content = $row['notes'];
+            print_r($content);
+            exit();
         }
     }else{
         header('Location: showcontent.php');
