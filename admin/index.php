@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
         $titleError = '<div class="alert alert-danger" role="alert">Please enter title field.</div>';
     }
 
-    if(isset($_POST['content'])){
+    if($_POST['content']){
         $content = $_POST['content'];
     }else{
         $contentError = '
