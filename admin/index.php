@@ -4,15 +4,13 @@ include('header.php');
 include('config/config.php');
 
 if(isset($_POST['submit'])){
-    print_r($_POST);
-    exit();
     if(isset($_POST['title']) && !empty($_POST['title'])){
         $title = $_POST['title'];
     }else{
         $titleError = '<div class="alert alert-danger" role="alert">Please enter title field.</div>';
     }
 
-    if(isset($_POST['content']) && !empty($_POST['content'])){
+    if(isset($_POST['content'])){
         $content = $_POST['content'];
     }else{
         $contentError = '
@@ -22,7 +20,7 @@ if(isset($_POST['submit'])){
         ';
     }
 
-    if((isset($title) && !empty($title)) && (isset($content) && !empty($content))){
+    if((isset($title) && !empty($title)) && (isset($content))){
         $sql = "INSERT INTO content(title, notes) VALUES('$title','$notes')";
         if(mysqli_query($con, $sql)){
             header("Location: showcontent.php");
