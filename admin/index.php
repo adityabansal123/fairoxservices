@@ -11,10 +11,8 @@ if(isset($_POST['submit'])){
     }
 
     if($_POST['content']){
-        echo '1'.$_POST['content'];
         $content = $_POST['content'];
-        echo '2'.$content;
-        exit();
+        
     }else{
         $contentError = '
             <div class="alert alert-danger" role="alert">
@@ -24,7 +22,7 @@ if(isset($_POST['submit'])){
     }
 
     if((isset($title) && !empty($title)) && (isset($content))){
-        $sql = "INSERT INTO content(title, notes) VALUES('$title','$notes')";
+        $sql = "INSERT INTO content(title, notes) VALUES('$title','$content')";
         if(mysqli_query($con, $sql)){
             header("Location: showcontent.php");
         }else{
