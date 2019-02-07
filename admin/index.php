@@ -29,7 +29,7 @@ if(isset($_POST['submit'])){
   		
             <div class="form-group">
     			<label for="contenttitle">Title</label>
-    			<input type="text" class="form-control" id="contenttitle" name="title" placeholder="Title" value="<?php if(isset($title)) echo $title;">
+    			<input type="text" class="form-control" id="contenttitle" name="title" placeholder="Title" value="<?php if(isset($title)) echo $title;?>">
   			</div>
             <?php
                 if(isset($titleError)){
@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
     			<label>Content</label>
                 
                 <!-- TinyMCE Embed Here by Using ID (mytextarea)-->
-    			<textarea id="mytextarea" name="content" value="<?php if(isset($title)) echo $title;"></textarea>
+    			<textarea id="mytextarea" name="content" value="<?php if(isset($title)) echo $title;?>"></textarea>
   			</div>
             <?php
                 if(isset($contentError)){
