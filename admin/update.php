@@ -39,7 +39,8 @@ if(isset($_POST['submit'])){
     }
 
     if((isset($title) && !empty($title)) && (isset($content) && !empty($content))){
-        $sql = "INSERT INTO content(title, notes) VALUES('$title','$content')";
+        $id = $_POST['upId'];
+        $sql = "UPDATE content SET title='$title', notes='$content' WHERE id=".$id;
         if(mysqli_query($con, $sql)){
             header("Location: showcontent.php");
         }else{
@@ -78,6 +79,7 @@ if(isset($_POST['submit'])){
                     echo $contentError;
                 }
             ?>
+            <input type="hidden" name="upId" value="<?php if(isset($id)) echo $id;?>">
   			<button class="btn btn-primary" name="submit" type="submit">Submit</button>
 	
     </form>
