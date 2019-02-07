@@ -6,10 +6,6 @@ include('config/config.php');
 
   
 <div id="container">
-            <!-- Message if record not fount. -->
-            <div class="alert alert-danger" role="alert">
-                <strong>Invalid ID! </strong> No Record Found.
-            </div>
 
             <?php
                 if(isset($_GET['id'])){
@@ -32,7 +28,7 @@ include('config/config.php');
                     }else{
                         echo '
                             <div class="alert alert-danger" role="alert">
-                                No Record Found
+                                <strong>Invalid ID! </strong> No Record Found.
                             </div>
                         ';
                     }
