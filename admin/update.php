@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
         $id = $_POST['upId'];
         $sql = "UPDATE content SET title='$title', notes='$content' WHERE id=".$id;
         if(mysqli_query($con, $sql)){
-            header("Location: showcontent.php");
+            header("Location: showcontent.php?success=2");
         }else{
             $sqlError = '
                 <div class="alert alert-danger" role="alert">

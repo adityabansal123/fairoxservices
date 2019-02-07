@@ -30,15 +30,27 @@ include('config/config.php');
       $id = $_POST['delId'];
       $sql = "DELETE FROM content WHERE id=".$id;
       if(mysqli_query($con, $sql)){
-        header("Location: showcontent.php");
-        // echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-        //         <strong>Content Deleted sucessfully.</strong>
-        //         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        //           <span aria-hidden="true">&times;</span>
-        //         </button>
-        //       </div>';
+        header("Location: showcontent.php?success=1");
+        
       }else{
         echo "Error! Record not deleted".mysqli_error($con);
+      }
+    }
+    if(isset($_GET['success'])){
+      if($_GET['success'] == 1){
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Content Deleted sucessfully.</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>';
+      } elseif($_GET['success'] == 2){
+        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Content Updated sucessfully.</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>';
       }
     }
 ?>
