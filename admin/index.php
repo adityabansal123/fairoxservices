@@ -11,7 +11,7 @@ if(isset($_POST['submit'])){
     }
 
     if($_POST['content']){
-        $content = $_POST['content'];
+        $content = mysql_real_escape_string($_POST['content']);
     }else{
         $contentError = '
             <div class="alert alert-danger" role="alert">
