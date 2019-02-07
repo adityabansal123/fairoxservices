@@ -40,7 +40,7 @@ if(isset($_POST['submit'])){
     			<label>Content</label>
                 
                 <!-- TinyMCE Embed Here by Using ID (mytextarea)-->
-    			<textarea id="mytextarea" name="content" value="<?php if(isset($title)) echo $title;?>"></textarea>
+    			<textarea id="mytextarea" name="content" value="<?php if(isset($content)) echo $content;?>"></textarea>
   			</div>
             <?php
                 if(isset($contentError)){
