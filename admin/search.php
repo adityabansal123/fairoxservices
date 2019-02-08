@@ -12,14 +12,11 @@ include('config/config.php');
   			</div>
   			<button class="btn btn-primary" name="submit" type="submit">Search</button>
 	</form>
-	<h4 class="text-center">Search Record</h4>
-    <table class="table table-striped">
-
-        <tbody>
             <?php
 
 			if(isset($_POST['search'])){
-				echo '<tr>
+				echo '<h4 class="text-center">Search Record</h4>
+				      <table class="table table-striped"><tbody><tr>
 						<th>ID</th>
 						<th>Title</th>
 						<th>Added Date</th>
