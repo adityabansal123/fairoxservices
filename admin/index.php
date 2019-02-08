@@ -52,7 +52,9 @@ if(isset($_POST['submit'])){
             ?>
   			<div class="form-group">
     			<label>Content</label>
-                <textarea id="mytextarea" name="content" value="<?php if(isset($content)) echo $content; ?>"></textarea>
+                <textarea id="mytextarea" name="content">
+                    <?php if(isset($content)) echo $content; ?>
+                </textarea>
   			</div>
             <?php
                 if(isset($contentError)){

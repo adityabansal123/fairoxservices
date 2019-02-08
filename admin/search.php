@@ -14,7 +14,7 @@ include('config/config.php');
 	</form>
             <?php
 
-			if(isset($_POST['search'])){
+			if(isset($_POST["search"])){
 				echo '<h4 class="text-center">Search Record</h4>
 				      <table class="table table-striped"><tbody><tr>
 						<th>ID</th>
@@ -24,8 +24,8 @@ include('config/config.php');
 						<th>Edit</th>
 						<th>Delete</th>
 					</tr>';
-				$keyword = $_POST['search'];
-				$sql = "SELECT * FROM content WHERE id LIKE '%{keyword}%' OR title LIKE '%{keyword}%'";
+				$k = $_POST['search'];
+				$sql = "SELECT * FROM content WHERE id LIKE '%{$k}%' OR title LIKE '%{$k}%'";
 				$result = mysqli_query($con, $sql);
 				if(mysqli_num_rows($result)>0){
 					while($row = mysqli_fetch_assoc($result)){
