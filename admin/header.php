@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PHP CRUD with TinyMCE</title>
+	<title>Fairox Blog</title>
 	
 	<!-- Required meta tags -->
     <meta charset="utf-8">
@@ -46,7 +46,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="index.php">Exceptional Programmers</a>
+    <a class="navbar-brand" href="index.php">Fairox Services</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
         <a class="nav-link" href="index.php">Add</a>
